@@ -1,37 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-table {
-  border-collapse: collapse;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>リスト</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
-<h1>Hello Page</h1>
-<table border="1">
-  <form method="post" action="/" th:object="${formModel}">
-  <tr>
-    <td><label for="name">名前</label></td>
-    <td><input type="text" name="name" th:value="*{name}" /></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><input type="submit" /></td>
-  </tr>
-  </form>
-</table>
-<hr/>
-<table border="1">
-  <tr>
-    <th>ID</th><th>名前</th>
-  </tr>
-  <tr th:each="obj : ${data}">
-    <td th:text="${obj.id}"></td>
-    <td th:text="${obj.name}"></td>
-  </tr>
-</table>
+  <h1>名前リスト（読み方付き）</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>名前</th>
+        <th>読み方</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>田中 太郎</td>
+        <td>たなか たろう</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>佐藤 花子</td>
+        <td>さとう はなこ</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Jerry Williams</td>
+        <td>ジェリー ウィリアムズ</td>
+      </tr>
+    </tbody>
+  </table>
+  <h1>商品リスト（値段付き）</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>商品</th>
+        <th>値段</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>ポテチ</td>
+        <td>150円</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>チョコ</td>
+        <td>100円</td>
+    </tr>
+      <tr>
+        <td>3</td>
+        <td>ブガッティヴェイロン</td>
+        <td>274,119,413円</td>
+      </tr>
+    </tbody>
+  </table>
+  <h1>本リスト（作家、レビュー付き）</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th>作家</th>
+        <th>レビュー</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>ラングの王様</td>
+        <td>タイケイン先生</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>まあまあマツビー</td>
+        <td>ファツジェラート先生</Td>
+        <td>4/10</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>ネズミと男性</td>
+        <td>ストーンバック先生</td>
+        <td>9/10</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>
